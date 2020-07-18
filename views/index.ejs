@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 지도 분석</title>
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 700px;"></div>
+
+    <script>
+        window.onload = function() {
+            var container = document.getElementById('map')
+            var options = {
+                center: new kakao.maps.LatLng(<%= Latitude %>, <%= Longitude %>),
+                level: 1,
+                mapTypeId: kakao.maps.MapTypeId.HYBRID
+            }
+
+            var map = new kakao.maps.Map(container, options);
+        }
+    </script>
+
+    <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=194c071f82030788a0073b5dd37c7463"></script>
+</body>
+</html>
